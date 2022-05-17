@@ -59,14 +59,14 @@ public class RestCalculatorTest {
 
         assertEquals("6/3=2",equation);
     }
-//    @Test
-//    public void getEquation_divideOperator_divideEquation(){
-//        EquationInput input = new EquationInput("divide", 6, 4);
-//
-//        String equation = restCalculator.getEquation(input);
-//
-//        assertEquals("6/4=1.5",equation);
-//    }
+    @Test
+    public void getEquation_DivisionWithAnIncompleteResult_divideEquation(){
+        EquationInput input = new EquationInput("divide", 6, 4);
+
+        String equation = restCalculator.getEquation(input);
+
+        assertEquals("6/4=1.5",equation);
+    }
     @Test
     public void getEquation_divideBy0_errorString(){
         EquationInput input = new EquationInput("divide", 5, 0);

@@ -8,8 +8,8 @@ import org.springframework.expression.spel.ast.*;
 @NoArgsConstructor
 public class EquationInput {
     private OperatorEnum operator;
-    int left;
-    int right;
+    private int left;
+    private int right;
 
     public EquationInput(String operator, int left, int right) {
         this.left = left;

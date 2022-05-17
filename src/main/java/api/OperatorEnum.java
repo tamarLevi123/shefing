@@ -8,8 +8,8 @@ public enum OperatorEnum {
     multiply("*", (a, b) -> a * b),
     divide("/", (a, b) -> a / b);
 
-    String operatorString;
-    BinaryOperator<Integer> accumulator;
+    private String operatorString;
+    private BinaryOperator<Integer> accumulator;
 
     public String getOperatorString() {
         return operatorString;

@@ -25,7 +25,15 @@ public class RestCalculator {
                 .append(input.getRight())
                 .append("=")
                 .append(input.getOperator().getAccumulator().apply(input.getLeft(), input.getRight()));
+        addDecimalFraction(sb,input);
         return sb.toString();
+    }
+
+    private void addDecimalFraction(StringBuilder sb, EquationInput input) {
+        if (input.getOperator() == OperatorEnum.divide
+                && input.getLeft() % input.getRight() != 0) {
+            sb.append(".").append(input.getLeft() % input.getRight() *10 / input.getRight());
+        }
     }
 
     private String validateInput(EquationInput input) {
