@@ -1,18 +1,15 @@
 package api;
 
-import org.springframework.expression.spel.ExpressionState;
-import org.springframework.expression.spel.ast.OpDivide;
-import org.springframework.expression.spel.ast.Operator;
+import cache.MyCacheable;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.ArrayList;
 
 @RestController
 @RequestMapping(value = "/calculator")
 @Service
 public class RestCalculator {
 
+    @MyCacheable
     @PostMapping(value = "/getEquation")
     public String getEquation(@RequestBody EquationInput input) {
         String validationError = validateInput(input);

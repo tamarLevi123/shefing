@@ -6,6 +6,7 @@ import org.springframework.expression.spel.ast.*;
 
 @Data
 @NoArgsConstructor
+@EqualsAndHashCode
 public class EquationInput {
     private OperatorEnum operator;
     private int left;
