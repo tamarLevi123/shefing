@@ -31,4 +31,12 @@ public enum OperatorEnum {
         this.operatorString = operatorString;
         this.accumulator = accumulator;
     }
+
+    public static OperatorEnum tryValueOf(String name) {
+        try {
+            return OperatorEnum.valueOf(name);
+        } catch (IllegalArgumentException e) {
+            return null;
+        }
+    }
 }

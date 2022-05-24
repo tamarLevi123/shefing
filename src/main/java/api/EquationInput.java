@@ -13,15 +13,7 @@ public class EquationInput {
     public EquationInput(String operator, int left, int right) {
         this.left = left;
         this.right = right;
-        setOperator(operator);
+        this.operator = OperatorEnum.tryValueOf(operator);
     }
 
-    public void setOperator(String operator) {
-        switch (operator){
-            case "plus": this.operator = OperatorEnum.plus; break;
-            case "minus": this.operator = OperatorEnum.minus; break;
-            case "multiply": this.operator = OperatorEnum.multiply; break;
-            case "divide": this.operator = OperatorEnum.divide; break;
-        }
-    }
 }
